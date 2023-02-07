@@ -89,6 +89,38 @@ app.use('/', info)
     thumbnail
   }
 } */
+// POST
+/* mutation {
+  guardarProducto(datos:
+    {
+    title: "testGuardarGraphiQL", 
+    price: "test123",
+    thumbnail: "testurl.com.ar"
+    }
+  ) {
+    title
+    price
+    thumbnail
+  }
+} */
+// UPDATE
+/* mutation {
+  actualizarProducto(
+    _id:"63e1af5abbc7e044a3de9af6",
+    datos:
+    {
+    title: "ProbandoTestGraphiQL", 
+    price: "9999GraphUpdate",
+    thumbnail: "updateexitoso"
+    }
+  ) {
+    _id
+    title
+    price
+    thumbnail
+  }
+} */
+// DELETE
 
 const ProductoGQLSchema = require('./GraphQL/ProductoSchema.js')
 const ProductoControllerGraphQL = require('./GraphQL/GraphQLController.js')

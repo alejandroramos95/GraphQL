@@ -17,14 +17,16 @@ function guardarProducto(req, res) {
 }
 
 function actualizarProducto(req, res) {
-  let { id } = req.params
-  let datos = req.body
-  productos.updateById(datos, id)
-  return datos
+  let update = JSON.parse(JSON.stringify(req))
+  const id = update._id
+  const producto = { _id: id, title: update.datos.title, price: update.datos.price, thumbnail: update.datos.thumbnail }
+  productos.updateById(producto, id)
+  return producto
 }
 
 async function eliminarProducto(req, res) {
-  let { id } = req.params
+  let producto = JSON.parse(JSON.stringify(req))
+  const id = producto._id
   let datos = await productos.deleteById(id)
   return datos
 }

@@ -17,7 +17,8 @@ const ProductoGQLSchema = buildSchema(`
     }
     type Mutation {
       guardarProducto(datos: ProductoInput): Producto,
-      eliminarProducto: [Producto]
+      actualizarProducto(_id: String, datos:ProductoInput): Producto,
+      eliminarProducto(_id: String): [Producto]
     }
 `)
 
